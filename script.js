@@ -40,6 +40,27 @@ var rightNowHour = dayjs().format('H');
 
  setPaPrFuClass();
 
+
+function saveItem(time) {
+
+  var txt = $("#"+time+ " textarea").val();
+  console.log(txt);;
+  
+}
+
+$("#9 button").click(function() {saveItem(9)})
+$("#10 button").click(function() {saveItem(10)})
+$("#11 button").click(function() {saveItem(11)})
+$("#12 button").click(function() {saveItem(12)})
+$("#13 button").click(function() {saveItem(13)})
+$("#14 button").click(function() {saveItem(14)})
+$("#15 button").click(function() {saveItem(15)})
+$("#16 button").click(function() {saveItem(16)})
+$("#17 button").click(function() {saveItem(17)})
+
+
+
+
 // var itemInput = $('textarea.description'); 
 
 // console.log(itemInput.text(''));
@@ -73,44 +94,6 @@ var rightNowHour = dayjs().format('H');
 //});
 
 
-// var divContainer = $('#container');
-
-
-
-
-
-// $( "p" ).append( "<strong>Hello</strong>" );
-
-
-
-
-
-
-// function handleColorTimes(){
-
-
-//   for(i=0;i<)
-//   if(hjhj){
-
-//   }
-// }
-
-
-// itemInput.on('click', handleColorTimes);
-
-
-
-// function handleItemSave(event) {
-//   event.preventDefault();
-//   // read user input from textarea
-//   var itemName = itemInput.val().trim();
-
-
-
-// var newItem = {
-//         name: itemName
-
-//  }
 
 //  // add item to local storage
 //   var items = readItemsFromStorage();
@@ -125,19 +108,8 @@ var rightNowHour = dayjs().format('H');
 
 // }
 
-function getText(){
-  var txt = $("<textarea>").val();
-
-if (txt){
-  alert(txt);
-
-}
-
-}
 
 
-var saveButton=$('<button>');
-saveButton.on('click',getText)
 
                 
 
