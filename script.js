@@ -1,21 +1,48 @@
 var timeDisplayEl = $('#currentDay');
 
+
+
+
 function displayDate() {
-var weekDay = dayjs().format('dddd');
-  var rightNow = dayjs().format('MMM DD');
-  timeDisplayEl.text(weekDay + ', '+ rightNow);
+  var weekDayMonthDate = dayjs().format('dddd' + ', ' + 'MMM DD');
+  timeDisplayEl.text(weekDayMonthDate);
 }
- 
-function displayTime() {
-  var rightNow = dayjs().format('H');
-  timeDisplayEl.text(rightNow);
-}
+  
+
 
 displayDate();
 
-var rightNow = dayjs().format('H');
-//var showTime = setInterval(rightNow, 1000);
- console.log(rightNow);
+var rightNowHour = dayjs().format('H');
+ console.log(rightNowHour);
+
+
+ function setPaPrFuClass(){
+  
+  for(i=9; i<18; i++){
+    if(i < rightNowHour){
+      console.log(i+" is less than"+" Now Hour:"+ rightNowHour);
+      var divClass= $('#'+i).addClass('past');
+      console.log(divClass);
+    }
+     else if(i == rightNowHour){
+      console.log(i+" is equal to "+" Now Hour:"+ rightNowHour);
+      var divClass= $('#'+i).addClass('present');
+      console.log(divClass);
+     }
+     else{
+      console.log(i+" is greater than"+" Now Hour:"+ rightNowHour);
+      var divClass= $('#'+i).addClass('future');
+      console.log(divClass);
+    }
+    
+  }
+ }
+
+ setPaPrFuClass();
+
+// var itemInput = $('textarea.description'); 
+
+// console.log(itemInput.text(''));
 
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
@@ -46,10 +73,18 @@ var rightNow = dayjs().format('H');
 //});
 
 
+// var divContainer = $('#container');
 
 
-// var itemInput = $( "div" ).has( "textarea" ); 
-// //console.log(ItemInput);
+
+
+
+// $( "p" ).append( "<strong>Hello</strong>" );
+
+
+
+
+
 
 // function handleColorTimes(){
 
@@ -90,10 +125,30 @@ var rightNow = dayjs().format('H');
 
 // }
 
+function getText(){
+  var txt = $("<textarea>").val();
+
+if (txt){
+  alert(txt);
+
+}
+
+}
+
+
+var saveButton=$('<button>');
+saveButton.on('click',getText)
+
+                
 
 
 
-// function readItemsFromStorage() {
+// // Takes an array of projects and saves them in localStorage.
+//  function saveItemsToStorage(items) {
+//    localStorage.setItem('items', JSON.stringify(items));
+//  }
+
+//  function readItemsFromStorage() {
 //   var items = localStorage.getItem('items');
 //    if (items) {
 //      items = JSON.parse(items);
@@ -103,14 +158,8 @@ var rightNow = dayjs().format('H');
 //    return items;
 //  }
 
-// // // Takes an array of projects and saves them in localStorage.
-//  function saveItemsToStorage(items) {
-//    localStorage.setItem('items', JSON.stringify(items));
-//  }
+// // Adds a project to local storage and prints the project data
 
-// // // Adds a project to local storage and prints the project data
-
-// };
 
 //   // add project to local storage
 //   var projects = readProjectsFromStorage();
