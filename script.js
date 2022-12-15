@@ -43,20 +43,45 @@ var rightNowHour = dayjs().format('H');
 
 function saveItem(time) {
 
-  var txt = $("#"+time+ " textarea").val();
-  console.log(txt);;
-  
+   var input= $("#"+time+ " textarea").val();
+    localStorage.setItem('description'+ time, input );
+
 }
 
-$("#9 button").click(function() {saveItem(9)})
-$("#10 button").click(function() {saveItem(10)})
-$("#11 button").click(function() {saveItem(11)})
-$("#12 button").click(function() {saveItem(12)})
-$("#13 button").click(function() {saveItem(13)})
-$("#14 button").click(function() {saveItem(14)})
-$("#15 button").click(function() {saveItem(15)})
-$("#16 button").click(function() {saveItem(16)})
-$("#17 button").click(function() {saveItem(17)})
+function getItems(){
+  for (time=9; time<18; time++){
+    itemRetrieved = localStorage.getItem('description'+ time);
+    if (itemRetrieved !== null) {
+      $("#"+time+ " textarea").val(itemRetrieved);
+    }
+  }
+}
+
+getItems();
+
+$("#9 button").click(function() {saveItem(9)});
+$("#10 button").click(function() {saveItem(10)});
+$("#11 button").click(function() {saveItem(11)});
+$("#12 button").click(function() {saveItem(12)});
+$("#13 button").click(function() {saveItem(13)});
+$("#14 button").click(function() {saveItem(14)});
+$("#15 button").click(function() {saveItem(15)});
+$("#16 button").click(function() {saveItem(16)});
+$("#17 button").click(function() {saveItem(17)});
+
+
+
+
+//To get
+
+
+
+//To delete
+
+//localStorage.removeItem('itemretrieve');
+
+
+
 
 
 
