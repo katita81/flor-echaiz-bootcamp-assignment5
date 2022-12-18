@@ -35,6 +35,7 @@ console.log(rightNowHour);
 function saveItem(time) { //save the task entered by the user in the local storage
   var input= $("#"+time+ " textarea").val();
   localStorage.setItem('description'+ time, input );
+  $('#notification').text('Appoitment added to local storage ✓');// to show notification of appoitnment added
 }
 
 function getItems(){// retrieves the tasks from the local storage
